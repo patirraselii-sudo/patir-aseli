@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0F1E1C"><title>Admin — PATIR ASELI</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .admin-wrap{max-width:900px;margin:0 auto;padding:24px 16px 50px}.admin-panel{background:#18312b;border:1px solid #315447;border-radius:18px;padding:20px;margin:16px 0}.admin-panel h1,.admin-panel h2{margin-top:0}.admin-form{display:grid;gap:12px}.admin-form label{display:grid;gap:6px;color:#c7ddd0;font-size:13px}.admin-form input,.admin-form textarea,.admin-form select{width:100%;border:1px solid #426858;border-radius:10px;background:#10251f;color:#f4fff8;padding:12px;font:inherit}.admin-form .inline{display:flex;align-items:center;gap:10px}.admin-form .inline input{width:auto}.admin-actions{display:flex;gap:8px;flex-wrap:wrap}.admin-table-wrap{overflow:auto}.admin-table{width:100%;border-collapse:collapse;min-width:600px}.admin-table th,.admin-table td{text-align:left;padding:10px;border-bottom:1px solid #315447;font-size:13px}.admin-table input{max-width:130px;background:#10251f;color:white;border:1px solid #426858;padding:8px;border-radius:8px}.admin-status{padding:10px 12px;border-radius:10px;background:#10251f;color:#c7ddd0;margin:10px 0}.admin-status.error{color:#ffc3b9}.admin-status.ok{color:#a7f3c5}.admin-small{color:#a9c2b4;font-size:12px;line-height:1.6}.admin-hidden{display:none!important}
+  </style>
+</head>
+<body>
+<header class="topbar"><div class="brand"><img src="logo.png" alt="Logo Patir Aseli" class="brand-logo"><div class="brand-name">patir aseli <span class="ver">✓</span><small>Panel Admin</small></div></div><a class="channel-mini" href="index.html">Website ↗</a></header>
+<main class="admin-wrap">
+  <section id="loginPanel" class="admin-panel">
+    <p class="eyebrow">AKSES KHUSUS ADMIN</p><h1>Login Admin</h1><p class="admin-small">Masuk dengan email dan password akun Supabase Auth yang sudah didaftarkan sebagai admin.</p>
+    <form id="loginForm" class="admin-form"><label>Email admin<input id="email" type="email" autocomplete="username" required></label><label>Password<input id="password" type="password" autocomplete="current-password" required></label><button class="btn-primary" type="submit">Login</button></form>
+    <div id="loginStatus" class="admin-status" role="status">Isi konfigurasi Supabase di config.js sebelum login.</div>
+  </section>
+  <section id="dashboardPanel" class="admin-hidden">
+    <div class="admin-panel"><div style="display:flex;justify-content:space-between;gap:12px;align-items:center;flex-wrap:wrap"><div><p class="eyebrow">DASHBOARD</p><h1>Kelola Layanan</h1><p id="signedInAs" class="admin-small"></p></div><button id="logoutBtn" class="btn-secondary" type="button">Keluar</button></div><div id="dashboardStatus" class="admin-status" role="status"></div></div>
+    <div class="admin-panel"><h2 id="formTitle">Tambah layanan</h2><form id="serviceForm" class="admin-form"><input id="serviceId" type="hidden"><label>Nama layanan<input id="serviceName" maxlength="120" required></label><label>Kategori<select id="serviceCategory"><option>Joki Kontak</option><option>Suntik Saluran</option><option>Produk Digital</option><option>Jasa Digital</option></select></label><label>Deskripsi<textarea id="serviceDescription" rows="2"></textarea></label><label>Harga (angka Rupiah)<input id="servicePrice" type="number" min="0" step="1" required></label><label>Urutan tampil<input id="serviceSort" type="number" min="0" step="1" value="1" required></label><label class="inline"><input id="serviceActive" type="checkbox" checked> Layanan aktif (tampil untuk pelanggan)</label><div class="admin-actions"><button class="btn-primary" type="submit">Simpan layanan</button><button class="btn-secondary" id="resetFormBtn" type="button">Bersihkan</button></div></form></div>
+    <div class="admin-panel"><h2>Daftar layanan</h2><p class="admin-small">Tekan Edit untuk mengubah data. Nonaktifkan layanan agar tidak tampil ke pelanggan tanpa menghapusnya.</p><div class="admin-table-wrap"><table class="admin-table"><thead><tr><th>Nama</th><th>Kategori</th><th>Harga</th><th>Status</th><th>Aksi</th></tr></thead><tbody id="servicesRows"></tbody></table></div></div>
+  </section>
+</main>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script><script src="config.js"></script><script src="admin.js"></script>
+</body></html>

@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0F1E1C">
+  <title>Patir Aseli — Layanan Digital</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <img src="logo.png" alt="Logo Patir Aseli" class="brand-logo">
+      <div class="brand-name">patir aseli <span class="ver">✓</span><small>Layanan digital terpercaya</small></div>
+    </div>
+    <a class="channel-mini" href="https://whatsapp.com/channel/0029Vb9D1m61HspxggVhp70U" target="_blank" rel="noopener">Saluran ↗</a>
+  </header>
+
+  <main class="page">
+    <div class="ticker"><span class="ticker-badge">Beli</span><span>Selamat datang di Patir Aseli — pilih layanan dan pesan dengan mudah.</span></div>
+    <section id="home" class="homePage">
+      <img src="banner.png" alt="Banner Patir Aseli" class="banner">
+      <section class="welcome">
+        <p class="eyebrow">DIGITAL SERVICE • FAST ORDER</p>
+        <h1>Selamat Datang di <span>Patir Aseli</span></h1>
+        <p>Pilih layanan yang kamu butuhkan, lengkapi format order, lalu lanjutkan pembayaran QRIS.</p>
+      </section>
+
+      <div class="menu-grid">
+        <button class="service-card grid-tile" onclick="showList('joki')"><span class="service-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3 19 6v5c0 5-3.4 8.4-7 10-3.6-1.6-7-5-7-10V6l7-3Z"/><path d="m9 12 2 2 4-5"/></svg></span><h2>Joki Kontak</h2></button>
+        <button class="service-card grid-tile" onclick="showList('suntik')"><span class="service-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m14 4 6 6M12.5 5.5l6 6M4 20l4.5-1.5L19 8l-3-3L5.5 15.5 4 20Z"/><path d="m8 12 4 4M3 21l2-2"/></svg></span><h2>Suntik Saluran</h2></button>
+        <button class="service-card grid-tile" onclick="showList('digital')"><span class="service-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m12 2 9 5v10l-9 5-9-5V7l9-5Z"/><path d="m3 7 9 5 9-5M12 12v10M7.5 4.5l9 5"/></svg></span><h2>Produk Digital</h2></button>
+        <button class="service-card grid-tile" onclick="showList('jasa')"><span class="service-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 4h16v16H4z"/><path d="m7 15 3-3 2 2 5-6M7 8h.01"/></svg></span><h2>Jasa Digital</h2></button>
+        <button class="service-card grid-tile" onclick="showList('pesanan')"><span class="service-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span><h2>Cek Pesanan</h2></button>
+        <button class="service-card grid-tile" onclick="showAbout()"><span class="service-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 7h.01"/></svg></span><h2>Tentang</h2></button>
+      </div>
+
+      <section class="home-service-section" aria-label="Daftar layanan utama">
+        <h2>Layanan Kami</h2>
+        <div class="home-service-cards">
+          <article class="home-service-card"><span class="home-service-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3 19 6v5c0 5-3.4 8.4-7 10-3.6-1.6-7-5-7-10V6l7-3Z"/><path d="m9 12 2 2 4-5"/></svg></span><h3>Joki Kontak</h3><p>Pilih paket joki sesuai durasi yang kamu butuhkan.</p><button type="button" class="btn-primary" onclick="showList('joki')">Lihat Daftar Layanan</button></article>
+          <article class="home-service-card"><span class="home-service-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m14 4 6 6M12.5 5.5l6 6M4 20l4.5-1.5L19 8l-3-3L5.5 15.5 4 20Z"/><path d="m8 12 4 4M3 21l2-2"/></svg></span><h3>Suntik Saluran</h3><p>Pilih paket pengikut, reaction, atau vote saluran.</p><button type="button" class="btn-primary" onclick="showList('suntik')">Lihat Daftar Layanan</button></article>
+          <article class="home-service-card"><span class="home-service-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m12 2 9 5v10l-9 5-9-5V7l9-5Z"/><path d="m3 7 9 5 9-5M12 12v10M7.5 4.5l9 5"/></svg></span><h3>Produk Digital</h3><p>Lihat pilihan produk digital yang tersedia.</p><button type="button" class="btn-primary" onclick="showList('digital')">Lihat Daftar Layanan</button></article>
+        </div>
+      </section>
+    </section>
+
+    <section id="list-joki" class="listPage">
+      <button class="back" type="button" onclick="showHome()">← Kembali ke Beranda</button>
+      <p class="eyebrow">PILIH PAKET</p><h1>Joki Kontak</h1><p class="list-intro">Pilih paket, tekan ORDER, lalu isi format pesanan.</p>
+      <div id="joki"></div>
+    </section>
+    <section id="list-suntik" class="listPage">
+      <button class="back" type="button" onclick="showHome()">← Kembali ke Beranda</button>
+      <p class="eyebrow">PILIH PAKET</p><h1>Suntik Saluran</h1><p class="list-intro">Pilih jenis dan jumlah layanan yang kamu butuhkan.</p>
+      <div id="suntik"></div>
+    </section>
+    <section id="list-digital" class="listPage">
+      <button class="back" type="button" onclick="showHome()">← Kembali ke Beranda</button>
+      <p class="eyebrow">PILIH PRODUK</p><h1>Produk Digital</h1><p class="list-intro">Pilih produk, lalu lanjutkan format order.</p>
+      <div id="digital"></div>
+    </section>
+    <section id="list-jasa" class="listPage">
+      <button class="back" type="button" onclick="showHome()">← Kembali</button><p class="eyebrow">LAYANAN</p><h1>Jasa Digital</h1><p class="list-intro">Pilih jasa yang kamu perlukan.</p><div id="jasa"></div>
+    </section>
+    <section id="list-about" class="listPage">
+      <button class="back" type="button" onclick="showHome()">← Kembali ke Beranda</button>
+      <p class="eyebrow">TENTANG KAMI</p><h1>Mengenal Patir Aseli.</h1>
+      <p class="about-lead">Patir Aseli menyediakan jasa Joki Kontak dan jasa Suntik Sosmed terpercaya dengan order online, pembayaran QRIS serta order pesanan yang cepat &amp; aman.</p>
+      <article class="about-profile"><img src="logo.png" alt="Logo Patir Aseli"><h2>Patir Aseli</h2><p>Patir Aseli menyediakan layanan Joki Kontak, Jasa Suntik, dan produk digital dengan proses order, pembayaran, serta pesanan yang terpusat.</p></article>
+      <section class="about-social"><p class="eyebrow">TERHUBUNG DENGAN KAMI</p><h2>Sosmed, admin WA, &amp; Saluran.</h2>
+      <a class="social-link" href="https://www.tiktok.com/@patiraseli27" target="_blank" rel="noopener"><span class="social-symbol">♪</span><span><b>Tiktok</b><small>@patiraseli27</small></span><span class="arrow">↗</span></a>
+      <a class="social-link" href="https://wa.me/6285113220034" target="_blank" rel="noopener"><span class="social-symbol">☏</span><span><b>Admin WA</b><small>wa.me/6285113220034</small></span><span class="arrow">↗</span></a>
+      <a class="social-link" href="https://whatsapp.com/channel/0029Vb9D1m61HspxggVhp70U" target="_blank" rel="noopener"><span class="social-symbol">↗</span><span><b>Saluran</b><small>WhatsApp Channel Patir Aseli</small><small>whatsapp.com/channel/0029Vb9D1m61HspxggVhp70U</small></span><span class="arrow">↗</span></a></section>
+    </section>
+    <section id="list-pesanan" class="listPage queue-page">
+      <button class="back queue-back" type="button" onclick="showHome()">← Kembali</button>
+      <div class="queue-hero"><p class="eyebrow">ANTRIAN PESANAN</p><h1>Pantau antrean dan<br class="desktop-break"> status pesanan.</h1><p class="list-intro">Lihat antrean aktif atau masukkan nomor order untuk memantau status pesanan.</p></div>
+      <div class="queue-search-block"><p class="eyebrow queue-eyebrow">CEK PESANAN</p><h2>Cari berdasarkan nomor order.</h2><div class="queue-search"><input id="queueSearch" placeholder="RJ-2026-0001" aria-label="Nomor order"><button id="queueCheck" class="btn-primary">⌕ <span>Cek Pesanan</span></button></div></div>
+      <div class="queue-panel"><div class="queue-meta"><b>Total Antrean <span>60</span></b><small id="queuePageLabel">Menampilkan antrean 1–15 dari 60</small></div><div class="queue-scroll"><table class="queue-table"><thead><tr><th>Antrean</th><th>Nomor Order</th><th>Pelanggan</th><th>Layanan</th><th>Status</th></tr></thead><tbody id="queueRows"></tbody></table></div></div>
+      <div class="queue-controls"><button id="prevQueue" class="btn-secondary">← Sebelumnya</button><button id="nextQueue" class="btn-primary">Berikutnya →</button></div>
+    </section>
+  </main>
+
+  <footer><b>patir aseli <span class="ver">✓</span></b><p>© 2026 Patir Aseli. All Rights Reserved.</p><p>Created By : <a class="footer-link" href="https://wa.me/6285113220034?text=Halo%20Admin%20Patir%20Aseli" target="_blank" rel="noopener">patiraseli.com</a></p></footer>
+
+  <div id="overlay" class="overlay" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal">
+      <button class="close-modal" type="button" id="closeOverlay" aria-label="Tutup">×</button>
+      <div id="step1" class="modal-step">
+        <p class="eyebrow">LANGKAH 1 DARI 2</p><h2 id="modalTitle">Format Pesanan</h2>
+        <p class="muted">Lengkapi data yang diperlukan. Format ini bisa kamu edit.</p>
+        <label for="format">Format order</label>
+        <textarea id="format" rows="9"></textarea>
+        <button type="button" class="btn-primary full" id="toPayment">Lanjut ke Pembayaran</button>
+      </div>
+      <div id="step2" class="modal-step" hidden>
+        <p class="eyebrow">LANGKAH 2 DARI 2</p><h2>Pembayaran QRIS</h2>
+        <p class="muted">Scan QRIS berikut menggunakan aplikasi pembayaran yang mendukung QRIS. Pastikan nominal sesuai sebelum membayar.</p>
+        <img src="qris.png" alt="QRIS pembayaran" class="qris-image">
+        <div class="timer-box">Selesaikan pesanan dalam <b id="timer">15:00</b></div>
+        <label for="finalFormat">Ringkasan pesanan</label>
+        <textarea id="finalFormat" rows="7" readonly></textarea>
+        <p class="small-note">Setelah membayar, lanjutkan ke WhatsApp admin dan kirim bukti pembayaran. Pesanan belum otomatis terverifikasi.</p>
+        <a id="waConfirm" class="btn-primary full" href="#" target="_blank" rel="noopener">Konfirmasi via WhatsApp</a>
+        <button type="button" class="btn-secondary full" id="editOrder">← Edit format pesanan</button>
+      </div>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="config.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
